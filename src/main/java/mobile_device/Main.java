@@ -2,6 +2,7 @@ package mobile_device;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,12 +19,17 @@ public class Main {
         tabletArray.add(tabletOne);
         tabletArray.add(tabletTwo);
 
-        for (MobileDevice tablet : tabletArray) {
-
-            System.out.println( tablet.listMyApps() +  tablet.calculateDiscount(50) );
-            System.out.println(tabletOne);
-            System.out.println(tabletOne.toString());
+        Iterator<MobileDevice> tablet = tabletArray.iterator();
+        while(tablet.hasNext()){
+            MobileDevice result =  tablet.next();
+            System.out.println(result);
         }
+        //        for (MobileDevice tablet : tabletArray) {
+//
+//            System.out.println( tablet.listMyApps() +  tablet.calculateDiscount(50) );
+//            System.out.println(tabletOne);
+//            System.out.println(tabletOne.toString());
+//        }
 
     }
 }
