@@ -1,7 +1,7 @@
 package mobile_device;
 
 
-
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +14,10 @@ public class Main {
                 "Android Tablet","iOSX", 400.00, 9.5,
                 new String[]{"Youtube", "Twitter", "Instagram"});
 
-        MobileDevice[] tabletArray = new MobileDevice[]{tabletOne, tabletTwo};
+        ArrayList<MobileDevice> tabletArray = new ArrayList<MobileDevice>();
+        tabletArray.add(tabletOne);
+        tabletArray.add(tabletTwo);
+
         for (MobileDevice tablet : tabletArray) {
 
             System.out.println( tablet.listMyApps() +  tablet.calculateDiscount(50) );
